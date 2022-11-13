@@ -73,6 +73,7 @@ import Icon from "@mui/material/Icon";
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
+import HomePage from "./layouts/pages/home";
 
 const routes = [
   {
@@ -194,6 +195,12 @@ const routes = [
             component: <Timeline />,
           },
         ],
+      },
+      {
+        name: "Home",
+        key: "home",
+        route: "/pages/home",
+        component: <HomePage />,
       },
       {
         name: "Pricing Page",
