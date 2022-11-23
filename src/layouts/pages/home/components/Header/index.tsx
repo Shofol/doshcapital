@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -36,6 +36,7 @@ import pageRoutes from "page.routes";
 import bgImage from "assets/images/bg-pricing.jpg";
 import { Container } from "@mui/system";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
+import video from "assets/hero.mp4";
 
 // Declaring props types for Header
 interface Props {
@@ -65,68 +66,69 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
         // borderRadius="xl"
         // m={2}
         // pt={2}
-        sx={{
-          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { black } }) =>
-            `${linearGradient(rgba(black.main, 0.25), rgba(black.main, 0.25))}, url(${bgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
+        // sx={{
+        //   backgroundImage: ({ functions: { linearGradient, rgba }, palette: { black } }) =>
+        //     `${linearGradient(rgba(black.main, 0.25), rgba(black.main, 0.25))}, url(${bgImage})`,
+        //   backgroundSize: "cover",
+        //   backgroundPosition: "center",
+        //   backgroundAttachment: "fixed",
+        // }}
       >
-        <Container>
-          <Grid
-            container
-            spacing={3}
-            justifyContent="start"
-            sx={{ position: "relative", py: 22, textAlign: "left" }}
-          >
-            <Grid item xs={11} lg={6}>
-              <MDBox mb={1} mt={5}>
-                <MDTypography variant="body2" color="white">
-                  - CROSSOVER TO WHAT WE DO
-                </MDTypography>
-              </MDBox>
-              <MDBox mb={1}>
-                <MDTypography variant="h1" color="white" fontWeight="bold">
-                  AUTOMATED TRADING NETWORKING DO$HCOIN
-                </MDTypography>
-              </MDBox>
-              <MDBox mb={2}>
-                <MDTypography variant="body2" color="white" fontWeight="light">
-                  You have Free Unlimited Updates and Premium Support on each package.
-                </MDTypography>
-              </MDBox>
+        <MDBox sx={{ position: "relative", height: "100vh" }}>
+          <MDBox
+            sx={{
+              position: "absolute",
+              left: "0",
+              top: "0",
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0,0,0,.2)",
+            }}
+          ></MDBox>
+          <Container>
+            <Grid
+              container
+              spacing={3}
+              justifyContent="start"
+              sx={{ position: "relative", zIndex: "1", py: 22, textAlign: "left" }}
+            >
+              <Grid item xs={11} lg={6}>
+                <MDBox mb={1} mt={12}>
+                  <MDTypography variant="body2" color="white">
+                    - CROSSOVER TO WHAT WE DO
+                  </MDTypography>
+                </MDBox>
+                <MDBox mb={1}>
+                  <MDTypography variant="h1" color="white" fontWeight="bold">
+                    AUTOMATED TRADING NETWORKING DO$HCOIN
+                  </MDTypography>
+                </MDBox>
+                <MDBox mb={2}>
+                  <MDTypography variant="body2" color="white" fontWeight="light">
+                    You have Free Unlimited Updates and Premium Support on each package.
+                  </MDTypography>
+                </MDBox>
+              </Grid>
             </Grid>
-          </Grid>
-        </Container>
+          </Container>
+          <MDBox
+            sx={{
+              position: "absolute",
+              left: "0",
+              top: "0",
+              width: "100%",
+              height: "100%",
+              zIndex: "-1",
+            }}
+          >
+            <video style={{ width: "100%" }} autoPlay={true} loop muted src={video}></video>
+          </MDBox>
+        </MDBox>
       </MDBox>
       <Grid container sx={{ px: 6, my: 8 }}>
         <Grid item xs={12}>
-          <Card sx={{ mt: -16 }}>
-            <MDBox minWidth={{ xs: "22rem", md: "25rem" }} mx="auto" mt={6}>
-              {/* <AppBar position="static">
-                <Tabs value={tabValue} onChange={tabHandler}>
-                  <Tab
-                    id="monthly"
-                    label={
-                      <MDBox py={0.5} px={2} color="inherit">
-                        Monthly
-                      </MDBox>
-                    }
-                  />
-                  <Tab
-                    id="annual"
-                    label={
-                      <MDBox py={0.5} px={2} color="inherit">
-                        Annual
-                      </MDBox>
-                    }
-                  />
-                </Tabs>
-              </AppBar> */}
-            </MDBox>
-            {children}
-          </Card>
+          <MDBox minWidth={{ xs: "22rem", md: "25rem" }} mx="auto" mt={6}></MDBox>
+          {children}
         </Grid>
       </Grid>
     </>

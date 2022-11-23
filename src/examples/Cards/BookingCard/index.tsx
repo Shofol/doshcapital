@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { ReactNode } from "react";
 
 // @mui material components
@@ -29,13 +14,11 @@ interface Props {
   image: string;
   title: string;
   description: string;
-  price: string;
-  location: ReactNode;
   action?: ReactNode | boolean;
   [key: string]: any;
 }
 
-function BookingCard({ image, title, description, price, location, action }: Props): JSX.Element {
+function BookingCard({ image, title, header, nature, description, action }: Props): JSX.Element {
   return (
     <Card
       sx={{
@@ -59,7 +42,7 @@ function BookingCard({ image, title, description, price, location, action }: Pro
           borderRadius="lg"
           shadow="md"
           width="100%"
-          height="100%"
+          height="280px"
           position="relative"
           zIndex={1}
         />
@@ -79,38 +62,28 @@ function BookingCard({ image, title, description, price, location, action }: Pro
           }}
         />
       </MDBox>
-      <MDBox textAlign="center" pt={3} px={3}>
-        <MDBox display="flex" justifyContent="center" alignItems="center" mt={action ? -8 : -4.25}>
+      <MDBox textAlign="left" pt={3} px={3}>
+        {/* <MDBox display="flex" justifyContent="center" alignItems="center" mt={action ? -8 : -4.25}>
           {action}
-        </MDBox>
-        <MDTypography variant="h5" fontWeight="regular" sx={{ mt: 4 }}>
+        </MDBox> */}
+        <MDTypography variant="body2" align="center" fontWeight="regular" sx={{ mt: 4 }}>
+          {header}
+        </MDTypography>
+        <MDTypography variant="h3" align="center" fontWeight="regular">
           {title}
         </MDTypography>
-        <MDTypography variant="body2" color="text" sx={{ mt: 1.5, mb: 1 }}>
+        <MDTypography variant="body2" align="center" fontWeight="regular">
+          {nature}
+        </MDTypography>
+        <MDBox
+          sx={{ fontSize: "1rem" }}
+          px={2}
+          pb={4}
+          dangerouslySetInnerHTML={{ __html: description }}
+        ></MDBox>
+        {/* <MDTypography variant="body2" color="text" sx={{ mt: 1.5, mb: 1 }}>
           {description}
-        </MDTypography>
-      </MDBox>
-      <Divider />
-      <MDBox
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-        pt={0.5}
-        pb={3}
-        px={3}
-        lineHeight={1}
-      >
-        <MDTypography variant="body2" fontWeight="regular" color="text">
-          {price}
-        </MDTypography>
-        <MDBox color="text" display="flex" alignItems="center">
-          <Icon color="inherit" sx={{ m: 0.5 }}>
-            place
-          </Icon>
-          <MDTypography variant="button" fontWeight="light" color="text">
-            {location}
-          </MDTypography>
-        </MDBox>
+        </MDTypography> */}
       </MDBox>
     </Card>
   );

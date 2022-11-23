@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // @mui material components
@@ -24,13 +9,10 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 // Pricing page components
 import Header from "layouts/pages/home/components/Header";
 import Footer from "layouts/pages/home/components/Footer";
-import PricingCards from "layouts/pages/home/components/PricingCards";
-import TrustedBrands from "layouts/pages/home/components/TrustedBrands";
-import Faq from "layouts/pages/home/components/Faq";
 import Sell from "./components/Sell";
-import How from "./components/How";
-import DoshCoin from "./components/Doshcoin";
 import ContactInfo from "./components/ContactInfo";
+import Team from "./components/Team";
+import Bots from "./components/Bots";
 
 function HomePage(): JSX.Element {
   const [tabValue, setTabValue] = useState<number>(0);
@@ -50,13 +32,10 @@ function HomePage(): JSX.Element {
     <PageLayout>
       <Header tabValue={tabValue} tabHandler={handleSetTabValue}>
         <Container>
-          {/* <PricingCards prices={prices} /> */}
-          {/* <TrustedBrands /> */}
+          <Bots />
           <Sell />
-          <How />
-          <DoshCoin />
+          <Team />
           <ContactInfo />
-          {/* <Faq /> */}
         </Container>
       </Header>
       <Footer />
