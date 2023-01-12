@@ -1,22 +1,7 @@
 /**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-/**
- * The base colors for the Material Dashboard 2 PRO React TSUI Dashboard PRO Material.
+ * The base colors for the  React TSUI Dashboard PRO Material.
  * You can add new color using this file.
- * You can customized the colors for the entire Material Dashboard 2 PRO React TSUI Dashboard PRO Material using thie file.
+ * You can customized the colors for the entire  React TSUI Dashboard PRO Material using thie file.
  */
 
 // types
@@ -83,6 +68,7 @@ interface Types {
   error: ColorsTypes | any;
   light: ColorsTypes | any;
   dark: ColorsTypes | any;
+  brandDark: ColorsTypes | any;
   grey:
     | {
         [key: string | number]: string;
@@ -207,6 +193,11 @@ const colors: Types = {
 
   dark: {
     main: "#344767",
+    focus: "#2c3c58",
+  },
+
+  brandDark: {
+    main: "#040e1a",
     focus: "#2c3c58",
   },
 

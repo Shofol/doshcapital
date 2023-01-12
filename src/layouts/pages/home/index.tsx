@@ -3,7 +3,7 @@ import { useState } from "react";
 // @mui material components
 import Container from "@mui/material/Container";
 
-// Material Dashboard 2 PRO React TS examples components
+//  React TS examples components
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Pricing page components

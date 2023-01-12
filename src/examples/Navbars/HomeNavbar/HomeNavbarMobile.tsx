@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // react-router components
@@ -23,12 +8,15 @@ import Collapse from "@mui/material/Collapse";
 import MuiLink from "@mui/material/Link";
 import { Theme } from "@mui/material/styles";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Material Dashboard 2 PRO React TS exampless
+//  React TS exampless
 import HomeNavbarDropdown from "examples/Navbars/HomeNavbar/HomeNavbarDropdown";
+import { Icon } from "@mui/material";
+import MDButton from "components/MDButton";
+import MDInput from "components/MDInput";
 
 // Declaring props types for HomeNavbarMobile
 interface Props {
@@ -155,8 +143,31 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
 
   return (
     <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
-      <MDBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
-        {renderNavbarItems}
+      <MDBox
+        pl={8}
+        sx={({ palette: { grey, dark } }: Theme) => ({
+          position: "absolute",
+          left: 0,
+          top: "70px",
+          background: dark.main,
+          width: "100%",
+        })}
+      >
+        <MDBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
+          {renderNavbarItems}
+        </MDBox>
+        <MDBox pr={1}>
+          <MDInput label="Search here" />
+        </MDBox>
+        <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
+          <Icon fontSize="large">account_circle</Icon>
+        </MDButton>
+        <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
+          <Icon fontSize="large">settings</Icon>
+        </MDButton>
+        <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
+          <Icon fontSize="large">notifications</Icon>
+        </MDButton>
       </MDBox>
     </Collapse>
   );

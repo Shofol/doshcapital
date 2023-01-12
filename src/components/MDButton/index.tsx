@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Material Dashboard 2 PRO React - v1.0.0
+*  React - v1.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
@@ -21,7 +21,7 @@ import { ButtonProps } from "@mui/material";
 // Custom styles for MDButton
 import MDButtonRoot from "components/MDButton/MDButtonRoot";
 
-// Material Dashboard 2 PRO React TS contexts
+//  React TS contexts
 import { useMaterialUIController } from "context";
 
 // Declaring props types for MDButton

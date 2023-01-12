@@ -1,20 +1,5 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 /** 
-  All of the routes for the Material Dashboard 2 PRO React are added here,
+  All of the routes for the  React are added here,
   You can add a new route, customize the routes and delete the routes here.
 
   Once you add a new route on this file it will be visible automatically on
@@ -35,7 +20,7 @@ Coded by www.creative-tim.com
   10. The `component` key is used to store the component of its route.
 */
 
-// Material Dashboard 2 PRO React layouts
+//  React layouts
 import Analytics from "layouts/dashboards/analytics";
 import Sales from "layouts/dashboards/sales";
 import ProfileOverview from "layouts/pages/profile/profile-overview";
@@ -65,7 +50,7 @@ import SignInIllustration from "layouts/authentication/sign-in/illustration";
 import SignUpCover from "layouts/authentication/sign-up/cover";
 import ResetCover from "layouts/authentication/reset-password/cover";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDAvatar from "components/MDAvatar";
 
 // @mui icons
@@ -74,6 +59,7 @@ import Icon from "@mui/material/Icon";
 // Images
 import profilePicture from "assets/images/team-3.jpg";
 import HomePage from "./layouts/pages/home";
+import Products from "layouts/pages/products";
 
 const routes = [
   {
@@ -199,8 +185,14 @@ const routes = [
       {
         name: "Home",
         key: "home",
-        route: "/pages/home",
+        route: "/",
         component: <HomePage />,
+      },
+      {
+        name: "Products",
+        key: "products",
+        route: "/pages/products",
+        component: <Products />,
       },
       {
         name: "Pricing Page",

@@ -1,13 +1,13 @@
-# [Material Dashboard 2 PRO React TS](http://demos.creative-tim.com/material-dashboard-2-pro-react-ts/#/dashboards/analytics?ref=readme-mdpr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts&text=Check%20Material%20Dashboard%202%20Pro%React%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#materialdesign%20#react%20https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts)
+# [ React TS](http://demos.creative-tim.com/material-dashboard-2-pro-react-ts/#/dashboards/analytics?ref=readme-mdpr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts&text=Check%20Material%20Dashboard%202%20Pro%React%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#materialdesign%20#react%20https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts)
 
 ![version](https://img.shields.io/badge/version-1.0.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-material-dashboard-pro-react.svg)](https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-material-dashboard-pro-react.svg)](https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues?q=is%3Aissue+is%3Aclosed)
 
 ![Image](https://s3.amazonaws.com/creativetim_bucket/products/594/original/material-dashboard-pro-react-typescript.jpg)
 
-Material Dashboard 2 PRO React TS is our newest premium MUI Admin Template based on React & TypeScript. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI + React + TypeScript dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
+React TS is our newest premium MUI Admin Template based on React & TypeScript. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI + React + TypeScript dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
 
 **Fully Coded Elements**
-Material Dashboard 2 PRO React TS is built with over 200 frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using MUI styled() API and sx prop. You will save a lot of time going from prototyping to full-functional code because all elements are implemented.
+React TS is built with over 200 frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using MUI styled() API and sx prop. You will save a lot of time going from prototyping to full-functional code because all elements are implemented.
 
 This Premium MUI + React + TypeScript Dashboard is coming with prebuilt design blocks, so the development process is seamless,
 switching from our pages to the real website is very easy to be done.
@@ -70,9 +70,9 @@ Let us know your thoughts below. And good luck with development!
 [<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-pro-react?ref=readme-mdpr)
 [<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/typescript.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts?ref=readme-mdpr)
 
-| React                                                                                                                                                                                                                                  | TypeScript                                                                                                                                                                                                                                                 |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [![Material Dashboard 2 PRO React](https://s3.amazonaws.com/creativetim_bucket/products/80/thumb/material-dashboard-pro-react.jpg)](http://demos.creative-tim.com/material-dashboard-pro-react/#/dashboards/analytics?ref=readme-mdpr) | [![Material Dashboard 2 PRO React TS](https://s3.amazonaws.com/creativetim_bucket/products/594/thumb/material-dashboard-pro-react-typescript.jpg)](http://demos.creative-tim.com/material-dashboard-2-pro-react-ts/#/dashboards/analytics?ref=readme-mdpr) |
+| React                                                                                                                                                                                                          | TypeScript                                                                                                                                                                                                                         |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [![ React](https://s3.amazonaws.com/creativetim_bucket/products/80/thumb/material-dashboard-pro-react.jpg)](http://demos.creative-tim.com/material-dashboard-pro-react/#/dashboards/analytics?ref=readme-mdpr) | [![ React TS](https://s3.amazonaws.com/creativetim_bucket/products/594/thumb/material-dashboard-pro-react-typescript.jpg)](http://demos.creative-tim.com/material-dashboard-2-pro-react-ts/#/dashboards/analytics?ref=readme-mdpr) |
 
 ## Demo
 
@@ -221,9 +221,9 @@ At present, we officially aim to support the last two versions of the following 
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the Material Dashboard 2 PRO React. Here are some advices for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the React. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the Material Dashboard 2 PRO React. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts?ref=readme-mdpr).
+1. Make sure that you are using the latest version of the React. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts?ref=readme-mdpr).
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 

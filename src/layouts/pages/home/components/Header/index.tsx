@@ -1,20 +1,6 @@
 /* eslint-disable no-unused-vars */
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-import { ReactNode, useRef } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -23,13 +9,13 @@ import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Material Dashboard 2 PRO React TS examples components
+//  React TS examples components
 
-// Material Dashboard 2 PRO React page layout routes
+//  React page layout routes
 import pageRoutes from "page.routes";
 
 // Images
@@ -37,6 +23,8 @@ import bgImage from "assets/images/bg-pricing.jpg";
 import { Container } from "@mui/system";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import video from "assets/hero.mp4";
+import { Icon } from "@mui/material";
+import breakpoints from "assets/theme/base/breakpoints";
 
 // Declaring props types for Header
 interface Props {
@@ -46,34 +34,30 @@ interface Props {
 }
 
 function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
+  const [mobileView, setMobileView] = useState(false);
+  const videoRef = useRef(null);
+  useEffect(() => {
+    // function displayMobileNavbar() {
+    if (window.innerWidth < breakpoints.values.lg) {
+      videoRef.current.style.height = "100%";
+      videoRef.current.style.width = "auto";
+      setMobileView(true);
+    } else {
+      setMobileView(false);
+      videoRef.current.style.height = "auto";
+      videoRef.current.style.width = "100%";
+    }
+    // }
+    // window.addEventListener("resize", displayMobileNavbar);
+
+    // Remove event listener on cleanup
+    // return () => window.removeEventListener("resize", displayMobileNavbar);
+  }, []);
+
   return (
     <>
-      <HomeNavbar
-        routes={pageRoutes}
-        // action={{
-        //   type: "external",
-        //   route: "https://creative-tim.com/product/material-dashboard-2-pro-react-ts",
-        //   label: "buy now",
-        //   color: "light",
-        // }}
-        transparent
-        light
-      />
-      <MDBox
-        position="relative"
-        minHeight="100vh"
-        height="50vh"
-        // borderRadius="xl"
-        // m={2}
-        // pt={2}
-        // sx={{
-        //   backgroundImage: ({ functions: { linearGradient, rgba }, palette: { black } }) =>
-        //     `${linearGradient(rgba(black.main, 0.25), rgba(black.main, 0.25))}, url(${bgImage})`,
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        //   backgroundAttachment: "fixed",
-        // }}
-      >
+      <HomeNavbar routes={pageRoutes} />
+      <MDBox position="relative" minHeight="100vh" height="50vh">
         <MDBox sx={{ position: "relative", height: "100vh" }}>
           <MDBox
             sx={{
@@ -89,23 +73,32 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
             <Grid
               container
               spacing={3}
-              justifyContent="start"
+              justifyContent="flex-end"
               sx={{ position: "relative", zIndex: "1", py: 22, textAlign: "left" }}
             >
               <Grid item xs={11} lg={6}>
-                <MDBox mb={1} mt={12}>
-                  <MDTypography variant="body2" color="white">
+                <MDBox mb={1} mt={mobileView ? 6 : 12}>
+                  <MDTypography variant="body2" color="white" align="right">
                     - CROSSOVER TO WHAT WE DO
                   </MDTypography>
                 </MDBox>
                 <MDBox mb={1}>
-                  <MDTypography variant="h1" color="white" fontWeight="bold">
-                    AUTOMATED TRADING NETWORKING DO$HCOIN
+                  <MDTypography variant="h1" color="white" fontWeight="bold" align="right">
+                    AUTOMATED TRADING NETWORKING
+                  </MDTypography>
+                  <MDTypography variant="h1" color="white" fontWeight="bold" align="right">
+                    DO$HCOIN
                   </MDTypography>
                 </MDBox>
                 <MDBox mb={2}>
-                  <MDTypography variant="body2" color="white" fontWeight="light">
-                    You have Free Unlimited Updates and Premium Support on each package.
+                  <MDTypography variant="body2" color="white" fontWeight="bold" align="right">
+                    Our Strategy stems from these two questions:
+                  </MDTypography>
+                  <MDTypography variant="body2" color="white" fontWeight="light" align="right">
+                    How do we win a losing trade in a 6.6 trillion $ market?
+                  </MDTypography>
+                  <MDTypography variant="body2" color="white" fontWeight="light" align="right">
+                    And, how do we do it while we sleep?
                   </MDTypography>
                 </MDBox>
               </Grid>
@@ -121,7 +114,14 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
               zIndex: "-1",
             }}
           >
-            <video style={{ width: "100%" }} autoPlay={true} loop muted src={video}></video>
+            <video
+              ref={videoRef}
+              style={{ width: "100%" }}
+              autoPlay={true}
+              loop
+              muted
+              src={video}
+            ></video>
           </MDBox>
         </MDBox>
       </MDBox>

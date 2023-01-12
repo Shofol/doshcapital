@@ -2,27 +2,30 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
-import Chaser from "assets/images/dosh/Chaser.png";
-import Cyclopse from "assets/images/dosh/Cyclopse.png";
-import Dominator from "assets/images/dosh/Dominator.png";
-import HedgeChaser from "assets/images/dosh/HedgeChaser.png";
-import Mountain from "assets/images/dosh/Mountain.png";
-import YNot from "assets/images/dosh/YNot.png";
 
 import { Card } from "@mui/material";
 import MDBox from "../../../../../components/MDBox";
 import Bot from "./Bot";
 import MDTypography from "../../../../../components/MDTypography";
+import { useMaterialUIController } from "context";
+import { useEffect, useState } from "react";
+import { botsData } from "data/bots";
 
 const Bots = () => {
-  const bots = [
-    { title: "Chaser", subtitle: "Chaser", image: Chaser },
-    { title: "Cyclopse", subtitle: "Cyclopse", image: Cyclopse },
-    { title: "Dominator", subtitle: "Dominator", image: Dominator },
-    { title: "HedgeChaser", subtitle: "HedgeChaser", image: HedgeChaser },
-    { title: "Mountain", subtitle: "Mountain", image: Mountain },
-    { title: "YNot", subtitle: "YNot", image: YNot },
-  ];
+  const [controller, dispatch] = useMaterialUIController();
+  const { darkMode } = controller;
+
+  const initalData = botsData;
+
+  const [bots, setBots] = useState([]);
+
+  useEffect(() => {
+    if (darkMode) {
+      setBots(initalData.filter((bot) => bot.theme === "dark"));
+    } else {
+      setBots(initalData.filter((bot) => bot.theme === "light"));
+    }
+  }, [darkMode]);
 
   return (
     <div>
@@ -33,15 +36,33 @@ const Bots = () => {
         <MDTypography variant="subtitle1" align="center">
           Our Bots are very good.
         </MDTypography>
-        <MDBox px={5}>
-          <Swiper slidesPerView={3} navigation={true} modules={[Navigation]} className="mySwiper">
-            {bots.map((bot, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <Bot title={bot.title} subtitle={bot.subtitle} image={bot.image} />
-                </SwiperSlide>
-              );
-            })}
+        <MDBox px={5} my={5}>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={40}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+            }}
+            navigation={true}
+            modules={[Navigation]}
+            className="mySwiper"
+          >
+            <MDBox sx={{ margin: "1rem" }}>
+              {bots.map((bot, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <Bot title={bot.title} subtitle={bot.subtitle} image={bot.image} />
+                  </SwiperSlide>
+                );
+              })}
+            </MDBox>
           </Swiper>
         </MDBox>
       </Card>

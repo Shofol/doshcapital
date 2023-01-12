@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -21,7 +6,7 @@ import TableRow from "@mui/material/TableRow";
 import TableBody from "@mui/material/TableBody";
 import { Theme } from "@mui/material/styles";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
@@ -33,7 +18,7 @@ import BaseLayout from "layouts/pages/account/components/BaseLayout";
 import logoCT from "assets/images/logo-ct.png";
 import logoCTDark from "assets/images/logo-ct-dark.png";
 
-// Material Dashboard 2 PRO React context
+//  React context
 import { useMaterialUIController } from "context";
 
 function Invoice(): JSX.Element {
@@ -261,9 +246,11 @@ function Invoice(): JSX.Element {
                       </TableRow>
                       <TableRow>
                         <MDBox component="td" textAlign="left" p={1} sx={borderBottom}>
-                          <MDTypography variant="body2" color="text" fontWeight="regular">
-                            Material Dashboard 2 PRO
-                          </MDTypography>
+                          <MDTypography
+                            variant="body2"
+                            color="text"
+                            fontWeight="regular"
+                          ></MDTypography>
                         </MDBox>
                         <MDBox
                           component="td"

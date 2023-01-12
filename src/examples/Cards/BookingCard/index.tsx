@@ -5,9 +5,10 @@ import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import { useMaterialUIController } from "context";
 
 // Declaring props types for BookingCard
 interface Props {
@@ -19,12 +20,13 @@ interface Props {
 }
 
 function BookingCard({ image, title, header, nature, description, action }: Props): JSX.Element {
+  const [controller, dispatch] = useMaterialUIController();
+  const { darkMode } = controller;
+
   return (
     <Card
       sx={{
-        "&:hover .card-header": {
-          transform: action && "translate3d(0, -50px, 0)",
-        },
+        height: "100%",
       }}
     >
       <MDBox
@@ -79,6 +81,7 @@ function BookingCard({ image, title, header, nature, description, action }: Prop
           sx={{ fontSize: "1rem" }}
           px={2}
           pb={4}
+          color={darkMode ? "white" : "black"}
           dangerouslySetInnerHTML={{ __html: description }}
         ></MDBox>
         {/* <MDTypography variant="body2" color="text" sx={{ mt: 1.5, mb: 1 }}>

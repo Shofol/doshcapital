@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDAvatar from "../../../../../components/MDAvatar";
 import MDTypography from "../../../../../components/MDTypography";

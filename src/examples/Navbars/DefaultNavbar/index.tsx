@@ -1,18 +1,4 @@
 /* eslint-disable no-param-reassign */
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 import { useState, useEffect, ReactNode, Fragment } from "react";
 
@@ -29,19 +15,19 @@ import MuiLink from "@mui/material/Link";
 import Container from "@mui/material/Container";
 import { Theme } from "@mui/material/styles";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-// Material Dashboard 2 PRO React TS examples components
+//  React TS examples components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
-// Material Dashboard 2 PRO React TS Base Styles
+//  React TS Base Styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-// Material Dashboard 2 PRO React context
+//  React context
 import { useMaterialUIController } from "context";
 
 // Declaring props types for DefaultNavbar
@@ -533,8 +519,8 @@ function DefaultNavbar({ routes, brand, transparent, light, action }: Props): JS
         }: any) => ({
           backgroundColor: transparent
             ? transparentColor.main
-            : rgba(darkMode ? background.sidenav : white.main, 0.8),
-          backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
+            : rgba(darkMode ? background.sidenav : white, 0.8),
+          // backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
       >
         <MDBox
@@ -600,7 +586,7 @@ function DefaultNavbar({ routes, brand, transparent, light, action }: Props): JS
 
 // Declaring default props for DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "Material Dashboard PRO",
+  brand: "Dosh Capital Investment",
   transparent: false,
   light: false,
   action: false,

@@ -1,28 +1,13 @@
 /* eslint-disable no-unused-vars */
 
 /**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-/**
   This file is used for controlling the global states of the components,
   you can customize the states for the different components here.
 */
 
 import { createContext, ReactNode, useContext, useMemo, useReducer } from "react";
 
-// The Material Dashboard 2 PRO React TSUI Dashboard PRO Material main context
+// The  React TSUI Dashboard PRO Material main context
 const MaterialUI = createContext<any>(null);
 
 // Setting custom name for the context which is visible on react dev tools
@@ -65,7 +50,7 @@ interface ActionTypes {
   value: any;
 }
 
-// Material Dashboard 2 PRO React reducer
+//  React reducer
 function reducer(state: StateTypes, action: ActionTypes) {
   switch (action.type) {
     case "MINI_SIDENAV": {
@@ -104,7 +89,7 @@ function reducer(state: StateTypes, action: ActionTypes) {
   }
 }
 
-// Material Dashboard 2 PRO React context provider
+//  React context provider
 function MaterialUIControllerProvider({ children }: { children: ReactNode }): JSX.Element {
   const initialState: StateTypes = {
     miniSidenav: false,
@@ -126,7 +111,7 @@ function MaterialUIControllerProvider({ children }: { children: ReactNode }): JS
   return <MaterialUI.Provider value={value}>{children}</MaterialUI.Provider>;
 }
 
-// Material Dashboard 2 PRO React custom hook for using context
+//  React custom hook for using context
 function useMaterialUIController() {
   const context = useContext(MaterialUI);
 

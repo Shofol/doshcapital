@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState } from "react";
 
 // @asseinfo/react-kanban components
@@ -28,13 +13,13 @@ import { v4 as uuidv4 } from "uuid";
 import Icon from "@mui/material/Icon";
 import { Theme } from "@mui/material/styles";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDButton from "components/MDButton";
 import MDTypography from "components/MDTypography";
 import MDInput from "components/MDInput";
 
-// Material Dashboard 2 PRO React TS examples components
+//  React TS examples components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
@@ -45,7 +30,7 @@ import Header from "layouts/applications/kanban/components/Header";
 // Data
 import boards from "layouts/applications/kanban/data";
 
-// Material Dashboard 2 PRO React context
+//  React context
 import { useMaterialUIController } from "context";
 
 function Kanban(): JSX.Element {

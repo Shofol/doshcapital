@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { ReactNode } from "react";
 
 // react-router-dom components
@@ -22,7 +7,7 @@ import { Link } from "react-router-dom";
 import Collapse from "@mui/material/Collapse";
 import Icon from "@mui/material/Icon";
 
-// Material Dashboard 2 PRO React TS components
+//  React TS components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
@@ -73,6 +58,7 @@ function HomeNavbarDropdown({
         color={light ? "white" : "dark"}
         opacity={light ? 1 : 0.6}
         sx={{ cursor: "pointer", userSelect: "none" }}
+        mr={3}
         {...(route && routeComponent)}
         {...(href && linkComponent)}
       >
@@ -88,16 +74,17 @@ function HomeNavbarDropdown({
           variant="button"
           fontWeight="regular"
           textTransform="capitalize"
-          color={light ? "white" : "dark"}
-          sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
+          color={"white"}
+          // color={light ? "white" : "dark"}
+          sx={{ fontWeight: "100%", padding: 0 }}
         >
           {name}
         </MDTypography>
-        <MDTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
+        {/* <MDTypography variant="body2" color={light ? "white" : "dark"} ml="auto">
           <Icon sx={{ fontWeight: "normal", verticalAlign: "middle" }}>
             {collapse && "keyboard_arrow_down"}
           </Icon>
-        </MDTypography>
+        </MDTypography> */}
       </MDBox>
       {children && (
         <Collapse in={Boolean(collapseStatus)} timeout={400} unmountOnExit>

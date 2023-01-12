@@ -1,28 +1,13 @@
 /**
-=========================================================
-* Material Dashboard 2 PRO React TS - v1.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-2-pro-react-ts
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-/**
- * The base box-shadow styles for the Material Dashboard 2 PRO React TSUI Dashboard PRO Material.
+ * The base box-shadow styles for the  React TSUI Dashboard PRO Material.
  * You can add new box-shadow using this file.
- * You can customized the box-shadow for the entire Material Dashboard 2 PRO React TSUI Dashboard PRO Material using thie file.
+ * You can customized the box-shadow for the entire  React TSUI Dashboard PRO Material using thie file.
  */
 
-// Material Dashboard 2 PRO React TS Base Styles
+//  React TS Base Styles
 import colors from "assets/theme-dark/base/colors";
 
-// Material Dashboard 2 PRO React TS Helper Functions
+//  React TS Helper Functions
 import boxShadow from "assets/theme-dark/functions/boxShadow";
 
 const { black, dark, tabs, coloredShadows } = colors;

@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Material Dashboard 2 PRO React TSUI Dashboard PRO React - v3.0.0
+*  React TSUI Dashboard PRO React - v3.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react

@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Material Dashboard 2 PRO React TSUI Dashboard PRO React - v3.0.0
+*  React TSUI Dashboard PRO React - v3.0.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
@@ -16,10 +16,10 @@ Coded by www.creative-tim.com
 // @mui material components
 import Grid from "@mui/material/Grid";
 
-// Material Dashboard 2 PRO React TSUI Dashboard PRO React components
+//  React TSUI Dashboard PRO React components
 import MDBox from "components/MDBox";
 
-// Material Dashboard 2 PRO React TSUI Dashboard PRO React example components
+//  React TSUI Dashboard PRO React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
