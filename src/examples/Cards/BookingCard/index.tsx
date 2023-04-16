@@ -74,7 +74,7 @@ function BookingCard({ image, title, header, nature, description, action }: Prop
         <MDTypography variant="h3" align="center" fontWeight="regular">
           {title}
         </MDTypography>
-        <MDTypography variant="body2" align="center" fontWeight="regular">
+        <MDTypography sx={{ fontSize: ".7rem" }} align="center" fontWeight="regular">
           {nature}
         </MDTypography>
         <MDBox

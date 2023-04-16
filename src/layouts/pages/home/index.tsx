@@ -32,7 +32,7 @@ function HomePage(): JSX.Element {
     <PageLayout>
       <Header tabValue={tabValue} tabHandler={handleSetTabValue}>
         <Container>
-          <Bots />
+          {/* <Bots /> */}
           <Sell />
           <Team />
           <ContactInfo />

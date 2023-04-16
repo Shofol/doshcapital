@@ -14,9 +14,11 @@ import MDTypography from "components/MDTypography";
 
 //  React TS exampless
 import HomeNavbarDropdown from "examples/Navbars/HomeNavbar/HomeNavbarDropdown";
-import { Icon } from "@mui/material";
+import { Icon, IconButton } from "@mui/material";
 import MDButton from "components/MDButton";
 import MDInput from "components/MDInput";
+import { navbarIconButton } from "../DashboardNavbar/styles";
+import { grey } from "@mui/material/colors";
 
 // Declaring props types for HomeNavbarMobile
 interface Props {
@@ -159,15 +161,15 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
         <MDBox pr={1}>
           <MDInput label="Search here" />
         </MDBox>
-        <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
-          <Icon fontSize="large">account_circle</Icon>
-        </MDButton>
-        <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
-          <Icon fontSize="large">settings</Icon>
-        </MDButton>
-        <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
-          <Icon fontSize="large">notifications</Icon>
-        </MDButton>
+        <IconButton sx={navbarIconButton} size="small" disableRipple>
+          <Icon sx={{ color: grey[50] }}>account_circle</Icon>
+        </IconButton>
+        <IconButton sx={navbarIconButton} size="small" disableRipple>
+          <Icon sx={{ color: grey[50] }}>settings</Icon>
+        </IconButton>
+        <IconButton sx={navbarIconButton} size="small" disableRipple>
+          <Icon sx={{ color: grey[50] }}>notifications</Icon>
+        </IconButton>
       </MDBox>
     </Collapse>
   );

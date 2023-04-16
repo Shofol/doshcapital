@@ -6,7 +6,7 @@ import "./index.css";
 import BookingCard from "examples/Cards/BookingCard";
 
 // Images
-import networkImage from "assets/images/dosh/network.jpeg";
+import networkImage from "assets/images/dosh/network.png";
 import doshCoainImage from "assets/images/dosh/doshcoin.png";
 import robotsImage from "assets/images/dosh/robots.png";
 

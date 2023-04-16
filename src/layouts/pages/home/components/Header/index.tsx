@@ -77,8 +77,8 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
               sx={{ position: "relative", zIndex: "1", py: 22, textAlign: "left" }}
             >
               <Grid item xs={11} lg={6}>
-                <MDBox mb={1} mt={mobileView ? 6 : 12}>
-                  <MDTypography variant="body2" color="white" align="right">
+                <MDBox mb={0} mt={mobileView ? 6 : 12}>
+                  <MDTypography sx={{ fontSize: "12px" }} color="white" align="right">
                     - CROSSOVER TO WHAT WE DO
                   </MDTypography>
                 </MDBox>

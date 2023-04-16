@@ -29,8 +29,11 @@ import breakpoints from "assets/theme/base/breakpoints";
 //  React context
 import { useMaterialUIController } from "context";
 import doshLogo from "assets/images/dosh/doshLogo.png";
-import { blue } from "@mui/material/colors";
+import { blue, grey } from "@mui/material/colors";
 import MDInput from "components/MDInput";
+import { IconButton } from "@mui/material";
+import { navbarIconButton } from "../DashboardNavbar/styles";
+import colors from "assets/theme/base/colors";
 
 // Declaring props types for HomeNavbar
 interface Props {
@@ -66,6 +69,7 @@ function NewGrow(props: NewGrowTypes) {
 function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.Element {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
+  const { white } = colors;
 
   const [dropdown, setDropdown] = useState<any>("");
   const [dropdownEl, setDropdownEl] = useState<any>("");
@@ -552,15 +556,15 @@ function HomeNavbar({ routes, brand, transparent, light, action }: Props): JSX.E
                 <MDBox pr={1}>
                   <MDInput label="Search here" />
                 </MDBox>
-                <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
-                  <Icon fontSize="large">account_circle</Icon>
-                </MDButton>
-                <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
-                  <Icon fontSize="large">settings</Icon>
-                </MDButton>
-                <MDButton iconOnly={true} variant="text" size="large" sx={{ padding: 0 }}>
-                  <Icon fontSize="large">notifications</Icon>
-                </MDButton>
+                <IconButton sx={navbarIconButton} size="small" disableRipple>
+                  <Icon sx={{ color: grey[50] }}>account_circle</Icon>
+                </IconButton>
+                <IconButton sx={navbarIconButton} size="small" disableRipple>
+                  <Icon sx={{ color: grey[50] }}>settings</Icon>
+                </IconButton>
+                <IconButton sx={navbarIconButton} size="small" disableRipple>
+                  <Icon sx={{ color: grey[50] }}>notifications</Icon>
+                </IconButton>
               </MDBox>
             )}
             {/* {action &&
