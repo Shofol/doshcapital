@@ -24,8 +24,15 @@ function Cover(): JSX.Element {
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
+  const action = {
+    type: "internal",
+    route: "/authentication/sign-up/cover",
+    label: "sign up",
+    color: "info",
+  };
+
   return (
-    <CoverLayout image={bgImage}>
+    <CoverLayout action={action} image={bgImage}>
       <Card>
         <MDBox
           variant="gradient"

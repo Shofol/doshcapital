@@ -24,8 +24,9 @@ import { Container } from "@mui/system";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import video from "assets/hero.mp4";
 import homeBg from "assets/images/dosh/homeBg.jpg";
-import { Icon } from "@mui/material";
+import { Icon, Link } from "@mui/material";
 import breakpoints from "assets/theme/base/breakpoints";
+import MDButton from "../../../../../components/MDButton";
 
 // Declaring props types for Header
 interface Props {
@@ -84,6 +85,28 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
                   <MDTypography variant="body2" color="white" fontWeight="light" align="right">
                     And, how do we do it while we sleep?
                   </MDTypography>
+                  <MDBox display="flex" justifyContent={"flex-end"} mt={2}>
+                    <MDButton
+                      component={Link}
+                      to={"/authentication/sign-up/cover"}
+                      variant="gradient"
+                      color={"info"}
+                      size="small"
+                      sx={{ mx: 2, mb: 2 }}
+                    >
+                      {"Send Info"}
+                    </MDButton>
+                    <MDButton
+                      component={Link}
+                      to={"/"}
+                      variant="gradient"
+                      color={"info"}
+                      size="small"
+                      sx={{ mb: 2 }}
+                    >
+                      {"Sign Up"}
+                    </MDButton>
+                  </MDBox>
                 </MDBox>
               </Grid>
             </Grid>

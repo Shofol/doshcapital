@@ -22,22 +22,13 @@ interface Props {
   coverHeight?: string;
   image: string;
   children: ReactNode;
+  action: any;
 }
 
-function CoverLayout({ coverHeight, image, children }: Props): JSX.Element {
+function CoverLayout({ coverHeight, image, children, action }: Props): JSX.Element {
   return (
     <PageLayout>
-      <DefaultNavbar
-        routes={pageRoutes}
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/material-dashboard-2-pro-react-ts",
-          label: "buy now",
-          color: "info",
-        }}
-        transparent
-        light
-      />
+      <DefaultNavbar routes={pageRoutes} action={action} transparent light />
       <MDBox
         width="calc(100% - 2rem)"
         minHeight={coverHeight}

@@ -18,8 +18,15 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 import bgImage from "assets/images/bg-sign-up-cover.jpeg";
 
 function Cover(): JSX.Element {
+  const action = {
+    type: "internal",
+    route: "/authentication/sign-in/cover",
+    label: "sign in",
+    color: "info",
+  };
+
   return (
-    <CoverLayout image={bgImage}>
+    <CoverLayout action={action} image={bgImage}>
       <Card>
         <MDBox
           variant="gradient"

@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 
-import { useState, useEffect, ReactNode, Fragment } from "react";
+import { useState, useEffect, ReactNode, Fragment, useRef } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -26,9 +26,16 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 
 //  React TS Base Styles
 import breakpoints from "assets/theme/base/breakpoints";
+import doshLogo from "assets/images/dosh/doshLogo.png";
 
 //  React context
-import { useMaterialUIController } from "context";
+import {
+  useMaterialUIController,
+  setTransparentNavbar,
+  setMiniSidenav,
+  setOpenConfigurator,
+} from "context";
+import zIndex from "@mui/material/styles/zIndex";
 
 // Declaring props types for DefaultNavbar
 interface Props {
@@ -61,8 +68,8 @@ function NewGrow(props: NewGrowTypes) {
 }
 
 function DefaultNavbar({ routes, brand, transparent, light, action }: Props): JSX.Element {
-  const [controller] = useMaterialUIController();
-  const { darkMode } = controller;
+  const [controller, dispatch] = useMaterialUIController();
+  const { darkMode, fixedNavbar } = controller;
 
   const [dropdown, setDropdown] = useState<any>("");
   const [dropdownEl, setDropdownEl] = useState<any>("");
@@ -100,6 +107,30 @@ function DefaultNavbar({ routes, brand, transparent, light, action }: Props): JS
     // Remove event listener on cleanup
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
+
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    function handleScroll(e: any) {
+      if (window.scrollY > 100) {
+        navRef.current.style.backdropFilter = `saturate(200%) blur(30px)`;
+        navRef.current.style.backgroundColor = `rgba(52, 71, 103, 0.2)`;
+      }
+      if (window.scrollY === 0) {
+        navRef.current.style.backdropFilter = `none`;
+        navRef.current.style.backgroundColor = `transparent`;
+      }
+    }
+    /** 
+         The event listener that's calling the handleTransparentNavbar function when 
+         scrolling the window.
+        */
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [dispatch, fixedNavbar]);
 
   const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }: any) => (
     <DefaultNavbarDropdown
@@ -499,10 +530,12 @@ function DefaultNavbar({ routes, brand, transparent, light, action }: Props): JS
   return (
     <Container>
       <MDBox
+        ref={navRef}
         py={1}
-        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 0 : 2 }}
+        px={{ xs: 4, sm: transparent ? 2 : 3, lg: transparent ? 5 : 10 }}
         my={3}
         mx={3}
+        // width={"100%"}
         width="calc(100% - 48px)"
         borderRadius="lg"
         shadow={transparent ? "none" : "md"}
@@ -510,18 +543,20 @@ function DefaultNavbar({ routes, brand, transparent, light, action }: Props): JS
         display="flex"
         justifyContent="space-between"
         alignItems="center"
-        position="absolute"
+        position="fixed"
         left={0}
+        right={0}
         zIndex={3}
-        sx={({
-          palette: { transparent: transparentColor, white, background },
-          functions: { rgba },
-        }: any) => ({
-          backgroundColor: transparent
-            ? transparentColor.main
-            : rgba(darkMode ? background.sidenav : white, 0.8),
-          // backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
-        })}
+        sx={{ zIndex: "100" }}
+        // ({
+        //   palette: { transparent: transparentColor, white, background },
+        //   functions: { rgba },
+        // }: any) => ({
+        //   backgroundColor: transparent
+        //     ? transparentColor.main
+        //     : rgba(darkMode ? background.sidenav : white, 0.8),
+        //   // backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
+        // })
       >
         <MDBox
           component={Link}
@@ -530,9 +565,11 @@ function DefaultNavbar({ routes, brand, transparent, light, action }: Props): JS
           lineHeight={1}
           pl={{ xs: 0, lg: 1 }}
         >
-          <MDTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
+          <img src={doshLogo} alt="logo of doshcapital" width={mobileView ? "200" : "300"} />
+
+          {/* <MDTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
             {brand}
-          </MDTypography>
+          </MDTypography> */}
         </MDBox>
         <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
           {renderNavbarItems}
