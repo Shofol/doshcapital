@@ -88,9 +88,11 @@ function Products(): JSX.Element {
 
   return (
     <DashboardLayout>
-      <MDBox width="calc(100% - 48px)" position="absolute" top="1.75rem">
+      <DashboardNavbar />
+
+      {/* <MDBox width="calc(100% - 48px)" position="absolute" top="1.75rem">
         <DashboardNavbar light absolute />
-      </MDBox>
+      </MDBox> */}
       <Header />
       <MDBox pb={3}>
         <Grid container alignItems="center">
@@ -114,7 +116,7 @@ function Products(): JSX.Element {
         <MDBox mt={5}>
           <Grid container spacing={3}>
             {bots.map((product) => (
-              <Grid key={product.title} item xs={12} md={6} lg={3}>
+              <Grid key={product.title} item xs={12} md={6} lg={4}>
                 <MDBox mb={1.5} mt={1.5}>
                   <ComplexProductCard
                     image={product.image}

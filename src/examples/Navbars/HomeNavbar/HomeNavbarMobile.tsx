@@ -19,6 +19,7 @@ import MDButton from "components/MDButton";
 import MDInput from "components/MDInput";
 import { navbarIconButton } from "../DashboardNavbar/styles";
 import { grey } from "@mui/material/colors";
+import { setOpenConfigurator, useMaterialUIController } from "../../../context";
 
 // Declaring props types for HomeNavbarMobile
 interface Props {
@@ -31,6 +32,11 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
 
   const handleSetCollapse = (name: string) =>
     collapse === name ? setCollapse(false) : setCollapse(name);
+
+  const [controller, dispatch] = useMaterialUIController();
+  const { openConfigurator } = controller;
+
+  const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
 
   const renderNavbarItems = routes.map(
     ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }: any) => (
@@ -164,7 +170,12 @@ function HomeNavbarMobile({ routes, open }: Props): JSX.Element {
         <IconButton sx={navbarIconButton} size="small" disableRipple>
           <Icon sx={{ color: grey[50] }}>account_circle</Icon>
         </IconButton>
-        <IconButton sx={navbarIconButton} size="small" disableRipple>
+        <IconButton
+          onClick={handleConfiguratorOpen}
+          sx={navbarIconButton}
+          size="small"
+          disableRipple
+        >
           <Icon sx={{ color: grey[50] }}>settings</Icon>
         </IconButton>
         <IconButton sx={navbarIconButton} size="small" disableRipple>

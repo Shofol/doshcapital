@@ -23,7 +23,7 @@ function ContactInfo(): JSX.Element {
           Don&#39;t Miss out
         </MDTypography>
       </MDBox>
-      <MDBox component="form" pb={3} px={20} mb={10}>
+      <MDBox component="form" pb={3} sx={{ px: { xs: 4, lg: 20 } }} mb={10}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField label="Name" placeholder="Alec" />

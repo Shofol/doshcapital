@@ -42,7 +42,7 @@ function Footer({ light }: { light?: boolean }): JSX.Element {
             by
             <Link href="https://www.creative-tim.com/" target="_blank">
               <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
-                &nbsp;Creative Tim&nbsp;
+                &nbsp;Dustyz&nbsp;
               </MDTypography>
             </Link>
             for a better web.
@@ -71,7 +71,7 @@ function Footer({ light }: { light?: boolean }): JSX.Element {
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  Creative Tim
+                  Dustyz PLC
                 </MDTypography>
               </Link>
             </MDBox>

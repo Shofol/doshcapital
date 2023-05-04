@@ -27,6 +27,7 @@ function BookingCard({ image, title, header, nature, description, action }: Prop
     <Card
       sx={{
         height: "100%",
+        mx: { xs: 4, lg: 0 },
       }}
     >
       <MDBox

@@ -42,105 +42,54 @@ function ComplexProductCard({
   dropdown,
 }: Props): JSX.Element {
   const [controller, dispatch] = useMaterialUIController();
-  const { darkMode } = controller;
-  // const renderMembers = members.map((member, key) => {
-  //   const memberKey = `member-${key}`;
-
-  //   return (
-  //     <MDAvatar
-  //       key={memberKey}
-  //       src={member}
-  //       alt="member profile"
-  //       size="xs"
-  //       sx={({ borders: { borderWidth }, palette: { white } }) => ({
-  //         border: `${borderWidth[2]} solid ${white.main}`,
-  //         cursor: "pointer",
-  //         position: "relative",
-
-  //         "&:not(:first-of-type)": {
-  //           ml: -1.25,
-  //         },
-
-  //         "&:hover, &:focus": {
-  //           zIndex: "10",
-  //         },
-  //       })}
-  //     />
-  //   );
-  // });
 
   return (
-    <Card>
+    <Card sx={{ maxWidth: "20rem" }}>
       <MDBox p={2}>
         <MDBox display="flex" flexDirection="column" alignItems="center">
           <MDBox
             component="img"
             src={image}
             alt={title}
-            // borderRadius="lg"
-            // shadow="md"
             width="100%"
-            height="200px"
+            height="auto"
             position="relative"
             zIndex={1}
             mt={-5}
-            // sx={({ palette: { white, dark } }: Theme) => ({
-            //   backgroundImage: `url(${image})`,
-            //   backgroundColor: darkMode ? dark.main : white.main,
-            //   backgroundSize: "contain",
-            //   backgroundRepeat: "no-repeat",
-            //   backgroundPosition: "center",
-            // })}
           />
-          <MDBox lineHeight={0}>
-            <MDTypography variant="h5" textTransform="capitalize" fontWeight="medium">
+          <MDBox lineHeight={0} mt={-1}>
+            <MDTypography sx={{ fontSize: "1.6rem" }} textTransform="capitalize">
               {title}
             </MDTypography>
-            {/* {members.length > -1 ? <MDBox display="flex">{renderMembers}</MDBox> : null} */}
           </MDBox>
-          {/* {dropdown && (
-            <MDTypography
-              color="secondary"
-              onClick={dropdown.action}
-              sx={{
-                ml: "auto",
-                mt: -1,
-                alignSelf: "flex-start",
-                py: 1.25,
-              }}
-            >
-              <Icon sx={{ cursor: "pointer", fontWeight: "bold" }}>more_vert</Icon>
-            </MDTypography>
-          )}
-          {dropdown.menu} */}
         </MDBox>
-        <MDBox my={1} lineHeight={1}>
+        <MDBox my={1} lineHeight={1} px={2}>
           <MDTypography variant="button" fontWeight="light" color="text">
             {description}
           </MDTypography>
         </MDBox>
-        <MDBox display="flex" alignItems="center" justifyContent="space-between">
-          <MDButton variant="outlined" color="info" size="small">
+        <MDBox display="flex" alignItems="center" justifyContent="space-between" mt={2} px={1}>
+          <MDButton variant="outlined" color="info" size="small" sx={{ padding: ".5rem 1.2rem" }}>
             Test Drive
             <Icon sx={{ marginLeft: ".3rem" }}>query_stats</Icon>
           </MDButton>
           <MDBox>
             <MDTypography variant="subtitle2" fontWeight="bold" display="flex" alignItems="center">
-              <span>⭐</span>
-              <span>⭐</span>
-              <span>⭐</span>
-              <span>⭐</span>
-              <span>⭐</span>
-              <span style={{ paddingLeft: ".2rem" }}>5</span>
+              <span style={{ marginRight: "-5px" }}>⭐</span>
+              <span style={{ marginRight: "-5px" }}>⭐</span>
+              <span style={{ marginRight: "-5px" }}>⭐</span>
+              <span style={{ marginRight: "-5px" }}>⭐</span>
+              <span style={{ marginRight: "-5px" }}>⭐</span>
+              <span style={{ paddingLeft: ".4rem" }}>5</span>
             </MDTypography>
           </MDBox>
         </MDBox>
         {/* <Divider /> */}
-        <MDBox display="flex" justifyContent="space-between" alignItems="center" mt={2}>
-          <MDButton variant="contained" color="info" size="small">
+        <MDBox display="flex" justifyContent="space-between" alignItems="center" mt={3} px={1}>
+          <MDButton variant="contained" color="info" size="small" sx={{ paddingY: "1rem" }}>
             Buy: $299
           </MDButton>
-          <MDButton variant="contained" color="info" size="small">
+          <MDButton variant="contained" color="info" size="small" sx={{ paddingY: "1rem" }}>
             Rent: $200/yr
           </MDButton>
         </MDBox>

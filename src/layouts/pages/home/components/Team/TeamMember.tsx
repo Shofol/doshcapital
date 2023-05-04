@@ -16,7 +16,7 @@ const TeamMember = ({
   desc: string;
 }) => {
   return (
-    <MDBox px={6}>
+    <MDBox px={6} mb={4}>
       <Grid item alignItems="center" justifyContent="center">
         <MDAvatar
           src={image}

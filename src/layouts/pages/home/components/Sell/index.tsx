@@ -13,10 +13,10 @@ import robotsImage from "assets/images/dosh/robots.png";
 function Sell(): JSX.Element {
   const [collapse, setCollapse] = useState<number | boolean>(false);
   return (
-    <MDBox mt={8} mb={6}>
-      <MDBox mt={2}>
+    <MDBox mt={8}>
+      <MDBox mt={2} mb={3}>
         <Grid container spacing={3} alignItems="stretch">
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={4} mb={4}>
             <MDBox mt={3} sx={{ height: "100%" }}>
               <BookingCard
                 image={robotsImage}
@@ -35,7 +35,7 @@ function Sell(): JSX.Element {
               />
             </MDBox>
           </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={4} mb={4}>
             <MDBox mt={3} sx={{ height: "100%" }}>
               <BookingCard
                 image={networkImage}
@@ -52,7 +52,7 @@ function Sell(): JSX.Element {
               />
             </MDBox>
           </Grid>
-          <Grid item xs={12} md={6} lg={4}>
+          <Grid item xs={12} md={6} lg={4} mb={4}>
             <MDBox mt={3} sx={{ height: "100%" }}>
               <BookingCard
                 image={doshCoainImage}

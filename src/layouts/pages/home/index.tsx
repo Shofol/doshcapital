@@ -13,6 +13,8 @@ import Sell from "./components/Sell";
 import ContactInfo from "./components/ContactInfo";
 import Team from "./components/Team";
 import Bots from "./components/Bots";
+import Card from "@mui/material/Card";
+import Configurator from "../../../examples/Configurator";
 
 function HomePage(): JSX.Element {
   const [tabValue, setTabValue] = useState<number>(0);
@@ -31,14 +33,17 @@ function HomePage(): JSX.Element {
   return (
     <PageLayout>
       <Header tabValue={tabValue} tabHandler={handleSetTabValue}>
-        <Container>
-          {/* <Bots /> */}
-          <Sell />
-          <Team />
-          <ContactInfo />
-        </Container>
+        <></>
       </Header>
+      <Container sx={{ px: { xs: 0 } }}>
+        <Card sx={{ mt: -30, px: { lg: 5 } }}>
+          <Sell />
+        </Card>
+        <Team />
+        <ContactInfo />
+      </Container>
       <Footer />
+      <Configurator />
     </PageLayout>
   );
 }

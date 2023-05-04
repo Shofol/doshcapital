@@ -23,6 +23,7 @@ import bgImage from "assets/images/bg-pricing.jpg";
 import { Container } from "@mui/system";
 import HomeNavbar from "examples/Navbars/HomeNavbar";
 import video from "assets/hero.mp4";
+import homeBg from "assets/images/dosh/homeBg.jpg";
 import { Icon } from "@mui/material";
 import breakpoints from "assets/theme/base/breakpoints";
 
@@ -36,28 +37,11 @@ interface Props {
 function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
   const [mobileView, setMobileView] = useState(false);
   const videoRef = useRef(null);
-  useEffect(() => {
-    // function displayMobileNavbar() {
-    if (window.innerWidth < breakpoints.values.lg) {
-      videoRef.current.style.height = "100%";
-      videoRef.current.style.width = "auto";
-      setMobileView(true);
-    } else {
-      setMobileView(false);
-      videoRef.current.style.height = "auto";
-      videoRef.current.style.width = "100%";
-    }
-    // }
-    // window.addEventListener("resize", displayMobileNavbar);
-
-    // Remove event listener on cleanup
-    // return () => window.removeEventListener("resize", displayMobileNavbar);
-  }, []);
 
   return (
     <>
       <HomeNavbar routes={pageRoutes} />
-      <MDBox position="relative" minHeight="100vh" height="50vh">
+      <MDBox position="relative" sx={{ position: "relative", height: "100vh" }}>
         <MDBox sx={{ position: "relative", height: "100vh" }}>
           <MDBox
             sx={{
@@ -76,7 +60,7 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
               justifyContent="flex-end"
               sx={{ position: "relative", zIndex: "1", py: 22, textAlign: "left" }}
             >
-              <Grid item xs={11} lg={6}>
+              <Grid item xs={12} lg={6} sx={{ px: { xs: 4, lg: 0 } }}>
                 <MDBox mb={0} mt={mobileView ? 6 : 12}>
                   <MDTypography sx={{ fontSize: "12px" }} color="white" align="right">
                     - CROSSOVER TO WHAT WE DO
@@ -109,19 +93,20 @@ function Header({ tabValue, tabHandler, children }: Props): JSX.Element {
               position: "absolute",
               left: "0",
               top: "0",
-              width: "100%",
-              height: "100%",
+              // width: "100%",
+              // height: "100vh",
               zIndex: "-1",
             }}
           >
-            <video
+            <img src={homeBg} alt="home background" style={{ width: "100%", height: "100vh" }} />
+            {/* <video
               ref={videoRef}
               style={{ width: "100%" }}
               autoPlay={true}
               loop
               muted
               src={video}
-            ></video>
+            ></video> */}
           </MDBox>
         </MDBox>
       </MDBox>

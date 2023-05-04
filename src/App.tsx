@@ -32,11 +32,11 @@ import createCache from "@emotion/cache";
 import routes from "routes";
 
 //  React TS contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
+import { useMaterialUIController, setMiniSidenav, setOpenConfigurator, setDarkMode } from "context";
 
 // Images
-import brandWhite from "assets/images/dosh/doshSmallLogo.png";
-import brandDark from "assets/images/dosh/doshSmallLogo.png";
+import brandWhite from "assets/images/dosh/doshLogo.png";
+import brandDark from "assets/images/dosh/doshLogo.png";
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
@@ -94,6 +94,10 @@ export default function App() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
+
+  useEffect(() => {
+    setDarkMode(dispatch, true);
+  }, []);
 
   const getRoutes = (allRoutes: any[]): any =>
     allRoutes.map(
@@ -172,7 +176,7 @@ export default function App() {
           <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Dosh Capital Investment"
+            brandName={null}
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
